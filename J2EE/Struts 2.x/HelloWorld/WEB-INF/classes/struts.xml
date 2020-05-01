@@ -1,0 +1,20 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="default" namespace="/" extends="struts-default">
+<action name="HelloWorld" class="my.HelloWorld" method="execute">
+<result name="SUCCESS">/success.jsp</result>
+</action>
+</package>
+<package name="user" namespace="/user" extends="struts-default">
+<action name="HelloWorld1" class="my.HelloWorld1">
+<result name="SUCCESS">/success.jsp</result>
+</action>
+</package>
+<package name="my1" namespace="/my1" extends="struts-default">
+<action name="HelloWorld2" class="my.HelloWorld2">
+<result name="SUCCESS">/success.jsp</result>
+</action>
+</package>
+</struts>

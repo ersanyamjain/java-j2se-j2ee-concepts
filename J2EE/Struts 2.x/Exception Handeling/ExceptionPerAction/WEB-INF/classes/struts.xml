@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="default" extends="struts-default">
+<action name="HelloWorld" class="my.HelloWorld">
+<exception-mapping exception="java.lang.ArithmeticException" result="exception1" />
+<exception-mapping exception="java.lang.NullPointerException" result="exception2" />
+<result name="SUCCESS">/success.jsp</result>
+<result name="exception1">/exception.jsp</result>
+<result name="exception2">/wel.jsp</result>
+</action>
+</package>
+</struts>

@@ -1,0 +1,23 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.convention.result.path" value="/">
+</constant>
+<package name="user" namespace="/" extends="struts-default">
+	<action name="run">
+		<result>/run.jsp</result>
+	</action>	
+	<action name="ExecuteTask" class="my.ExecuteTaskAction">
+		<interceptor-ref name="defaultStack">
+		</interceptor-ref>
+		<interceptor-ref name="execAndWait">
+		<!-- Override delay and delaySleepInterval parameters of execAndWait to 500ms -->
+			<param name="delay">500</param>
+			<param name="delaySleepInterval">500</param>
+		</interceptor-ref>
+		<result name="wait">/running.jsp</result>
+		<result name="success">/success.jsp</result>
+	</action>
+</package>
+</struts>
